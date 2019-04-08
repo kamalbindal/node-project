@@ -1,8 +1,17 @@
+const Student = require('../models/student');
+
 exports.postForm = (req, res) => {
-    response={
-        first_name:req.body.first_name,
-        last_name:req.body.last_name
-    };
+    rollno = req.body.rollno;
+    firstName = req.body.first_name;
+    lastName = req.body.last_name;
+
     console.log(response);
-    res.end(JSON.stringify(response));
+    const student = new Student(rollno, firstName, lastName);
+    studeny
+        .save()
+        .then(() => {
+        res.redirect('/');
+        })
+    .catch(err => console.log(err));
+    res.end(JSON.stringify({rollno, firstName, lastName}));
 }
