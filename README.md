@@ -1,5 +1,5 @@
 # node-project
 
-Install node
-npm i
-node server.js
+Install node   
+npm i   
+node server.js   
